@@ -1,0 +1,51 @@
+﻿=== MotoGari verification (PORT 3100) ===
+GET /api/products            -> 20 items / 20 entries (expected 20)
+GET /api/products?model=CG70  -> 12 items: p01,p04,p05,p07,p20,p17,p03,p19,p18,p06,p02,p08
+GET /api/products?model=CG125 -> 12 items: p09,p12,p11,p15,p20,p17,p14,p19,p18,p16,p10,p13
+GET /api/products?category=Filters -> 3 items
+GET /api/products?sort=price-asc   -> cheapest p02 @ 350
+GET /api/products?sort=price-desc  -> priciest p07 @ 9500
+GET /api/products?sort=featured   -> first p09 (Air Filter Element — CG125)
+GET /api/products?search=brake     -> 2 items
+GET /api/products?min=1000&max=3000-> 2 items
+GET /api/products/p12         -> Carburetor Assembly / 6800 PKR / image /assets/products/p12.jpg
+GET /api/products/p99         -> 404 (expected 404)
+GET /api/categories           -> 9 categories: Transmission, Filters, Electrical, Engine, Brakes, Body, Tyres & Tubes, Suspension, Accessories
+GET /api/models               -> CG70=12, CG125=12, CG70 / CG125=4
+GET /api/stats                -> products=20 orders=3 categories=9
+POST /api/orders (valid)      -> orderId=MG-MUXOVZ2T-004 total=5900 items=3 payment=Cash on Delivery (COD)
+POST /api/orders (invalid)    -> 400 (expected 400)
+POST /api/orders (over stock) -> 400 (expected 400)
+data/orders.json              -> 4 order(s) stored on disk
+GET /                         -> 200 contains MotoGari=True
+GET /admin                    -> 200
+GET /nope                     -> 404 (expected 404)
+GET /assets/products/p01.jpg  -> 200
+GET /api/health               -> {"ok":true,"uptime":173.9712199,"port":3100}
+
+=== image validation (magic bytes + size) ===
+p01.jpg    672652 bytes  jpg  OK
+p02.jpg     68232 bytes  jpg  OK
+p03.jpg     36191 bytes  jpg  OK
+p04.jpg    395957 bytes  jpg  OK
+p05.jpg    114339 bytes  jpg  OK
+p06.jpg    225741 bytes  jpg  OK
+p07.jpg    202688 bytes  jpg  OK
+p08.jpg    303913 bytes  jpg  OK
+p09.jpg    225986 bytes  jpg  OK
+p10.jpg    155003 bytes  jpg  OK
+p11.jpg    236557 bytes  jpg  OK
+p12.jpg    155765 bytes  jpg  OK
+p13.jpg     86115 bytes  jpg  OK
+p14.jpg    189145 bytes  jpg  OK
+p15.jpg    169099 bytes  jpg  OK
+p16.jpg    146608 bytes  jpg  OK
+p17.jpg    349177 bytes  jpg  OK
+p18.jpg    105342 bytes  jpg  OK
+p19.jpg    536003 bytes  jpg  OK
+p20.jpg   1875845 bytes  jpg  OK
+image summary                 -> 20/20 valid, 0 invalid
+hero.jpg 198246 bytes OK
+cat-engine.jpg 110207 bytes OK
+cat-brakes.jpg 48496 bytes OK
+cat-electrical.jpg 234970 bytes OK

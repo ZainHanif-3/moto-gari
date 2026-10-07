@@ -1,0 +1,24 @@
+{
+  "name": "moto-gari",
+  "version": "1.0.0",
+  "description": "MotoGari — Honda CG70 & CG125 spare parts store (Pakistan) by ZN DEVELOPER",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "images": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/get-images.ps1"
+  },
+  "keywords": [
+    "honda",
+    "cg70",
+    "cg125",
+    "spare-parts",
+    "ecommerce",
+    "pakistan"
+  ],
+  "author": "ZN DEVELOPER — CEO Zain Hanif",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
