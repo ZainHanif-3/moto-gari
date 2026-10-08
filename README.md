@@ -153,6 +153,21 @@ GET /admin → 200 · GET / → 200 (contains "MotoGari") · GET /api/stats → 
 
 ---
 
+
+---
+
+## Screenshots
+
+![Home hero](screenshots/01-home-hero.png)
+
+![Product grid](screenshots/02-product-grid.png)
+
+![Mobile hero](screenshots/03-mobile-hero.png)
+
+![Built by the ZN DEVELOPER team footer](screenshots/04-footer-team.png)
+
+![Cart drawer](screenshots/05-cart-drawer.png)
+
 ## Built by ZN DEVELOPER — CEO Zain Hanif
 
 **ZN DEVELOPER** is a full-service software company: websites, web/mobile apps, APIs, automations, trading bots, SEO and data/Excel work — every deliverable checked by a dedicated QA supervisor before it ships.
